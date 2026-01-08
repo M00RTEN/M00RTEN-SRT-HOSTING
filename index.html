@@ -11,6 +11,8 @@
         .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
         .neon-border { border: 1px solid #a855f7; box-shadow: 0 0 15px rgba(168, 85, 247, 0.2); }
         .gradient-bg { background: linear-gradient(135deg, #4c1d95 0%, #0f172a 100%); }
+        .twitch-link { transition: all 0.3s ease; text-decoration: none; }
+        .twitch-link:hover { color: #a855f7; text-shadow: 0 0 20px rgba(168, 85, 247, 0.6); }
     </style>
 </head>
 <body class="antialiased">
@@ -20,7 +22,7 @@
             DEN ULTIMATE NØDLØSNINGEN FOR IRL-STREAMERE
         </div>
         <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight uppercase">
-            M00RTENS <span class="text-purple-500 text-shadow-lg">SRT HOSTING</span>
+            <a href="https://www.twitch.tv/m00rten" target="_blank" class="twitch-link">M00RTEN</a>S <span class="text-purple-500 text-shadow-lg">SRT HOSTING</span>
         </h1>
         <p class="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
             Trenger du stabil stream <strong>i dag</strong>? Jeg fikser SRT og NOALBS på 1-2-3 så du kan gå live "kjapt og gale".
@@ -68,24 +70,13 @@
             </div>
             
             <form action="https://formspree.io/f/xbdlnobn" method="POST" class="space-y-5">
-                <div>
-                    <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-2">Twitch Navn / Discord</label>
-                    <input type="text" name="user" placeholder="Ditt kallenavn" required class="w-full bg-slate-900 border border-gray-800 rounded-xl p-4 text-white focus:ring-2 focus:ring-purple-500 outline-none">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-2">Din E-post</label>
-                    <input type="email" name="email" placeholder="din@epost.no" required class="w-full bg-slate-900 border border-gray-800 rounded-xl p-4 text-white focus:ring-2 focus:ring-purple-500 outline-none">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-2">Hva trenger du?</label>
-                    <select name="service" class="w-full bg-slate-900 border border-gray-800 rounded-xl p-4 text-white focus:ring-2 focus:ring-purple-500 outline-none">
-                        <option value="100kr">1 dag hosting (100 kr)</option>
-                        <option value="149kr">1 dag hosting + setup hjelp (149 kr)</option>
-                    </select>
-                </div>
-                <button type="submit" class="w-full bg-purple-600 hover:bg-purple-500 text-white font-black py-4 rounded-xl shadow-lg transition-all active:scale-95">
-                    SEND FORESPØRSEL
-                </button>
+                <input type="text" name="user" placeholder="Twitch Navn / Discord" required class="w-full bg-slate-900 border border-gray-800 rounded-xl p-4 text-white focus:ring-2 focus:ring-purple-500 outline-none">
+                <input type="email" name="email" placeholder="Din E-post" required class="w-full bg-slate-900 border border-gray-800 rounded-xl p-4 text-white focus:ring-2 focus:ring-purple-500 outline-none">
+                <select name="service" class="w-full bg-slate-900 border border-gray-800 rounded-xl p-4 text-white focus:ring-2 focus:ring-purple-500 outline-none">
+                    <option value="100kr">1 dag hosting (100 kr)</option>
+                    <option value="149kr">1 dag hosting + setup hjelp (149 kr)</option>
+                </select>
+                <button type="submit" class="w-full bg-purple-600 hover:bg-purple-500 text-white font-black py-4 rounded-xl shadow-lg transition-all active:scale-95">SEND FORESPØRSEL</button>
             </form>
         </section>
 
@@ -120,7 +111,6 @@
                         class="absolute top-0 left-0 w-full h-full"
                         src="https://www.youtube.com/embed/9K_azACOl_4" 
                         frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                         allowfullscreen>
                     </iframe>
                 </div>
