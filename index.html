@@ -1,215 +1,138 @@
 <!DOCTYPE html>
 <html lang="no">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M00RTENS SRT HOSTING | Kjapp 1-Dags Løsning</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: white; }
-        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .neon-border { border: 1px solid #a855f7; box-shadow: 0 0 15px rgba(168, 85, 247, 0.2); }
-        .gradient-bg { background: linear-gradient(135deg, #4c1d95 0%, #0f172a 100%); }
-        .twitch-link { transition: all 0.3s ease; text-decoration: none; }
-        .twitch-link:hover { color: #a855f7; text-shadow: 0 0 20px rgba(168, 85, 247, 0.6); }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M00RTENS SRT HOSTING | Kjapp 1-Dags Løsning</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: white; }
+        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .neon-border { border: 1px solid #a855f7; box-shadow: 0 0 15px rgba(168, 85, 247, 0.2); }
+        .gradient-bg { background: linear-gradient(135deg, #4c1d95 0%, #0f172a 100%); }
+        .twitch-link { transition: all 0.3s ease; text-decoration: none; }
+        .twitch-link:hover { color: #a855f7; text-shadow: 0 0 20px rgba(168, 85, 247, 0.6); }
+    </style>
 </head>
 <body class="antialiased">
 
-    <header class="py-20 px-6 text-center gradient-bg border-b border-purple-900/50">
-        <div class="inline-block px-4 py-1 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold mb-4">
-            DEN ULTIMATE NØDLØSNINGEN FOR IRL-STREAMERE
-        </div>
-        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight uppercase">
-            <a href="https://www.twitch.tv/m00rten" target="_blank" class="twitch-link">M00RTEN</a>S <span class="text-purple-500 text-shadow-lg">SRT HOSTING</span>
-        </h1>
-        <p class="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-            Trenger du stabil stream <strong>i dag</strong>? Jeg fikser SRT og NOALBS på 1-2-3 så du kan gå live "kjapt og gale".
-        </p>
-    </header>
-<section class="max-w-4xl mx-auto mb-24">
-    <div class="glass p-10 rounded-3xl border border-purple-500/30">
-        <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-10">
-            <div>
-                <h3 class="text-3xl font-bold text-white uppercase tracking-tight">Signal & Frekvenser</h3>
-                <p class="text-gray-400 mt-2">Vil du ha live signal-overlay i OBS slik som proffene?</p>
-            </div>
-            <button onclick="document.getElementById('signal-content').classList.toggle('hidden')" class="bg-purple-600 hover:bg-purple-500 text-white font-black py-3 px-8 rounded-xl transition-all active:scale-95 shadow-lg">
-                LYST Å LEGGE TIL SIGNAL I OVERLAY?
-            </button>
+    <header class="py-20 px-6 text-center gradient-bg border-b border-purple-900/50">
+        <div class="inline-block px-4 py-1 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold mb-4">
+            DEN ULTIMATE NØDLØSNINGEN FOR IRL-STREAMERE
         </div>
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight uppercase">
+            <a href="https://www.twitch.tv/m00rten" target="_blank" class="twitch-link">M00RTEN</a>S <span class="text-purple-500 text-shadow-lg">SRT HOSTING</span>
+        </h1>
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+            Trenger du stabil stream <strong>i dag</strong>? Jeg fikser SRT og NOALBS på 1-2-3 så du kan gå live "kjapt og gale".
+        </p>
+    </header>
 
-        <div id="signal-content" class="hidden space-y-12 transition-all">
-            <div class="overflow-x-auto">
-                <table class="w-full text-left border-collapse">
-                    <thead>
-                        <tr class="text-purple-400 uppercase text-sm tracking-widest border-b border-white/10">
-                            <th class="py-4 px-2">Bånd</th>
-                            <th class="py-4 px-2">Frekvens</th>
-                            <th class="py-4 px-2">Type</th>
-                            <th class="py-4 px-2">Egenskaper</th>
-                        </tr>
-                    </thead>
-                    <tbody class="text-gray-300">
-                        <tr class="border-b border-white/5 hover:bg-white/5">
-                            <td class="py-4 px-2 font-bold text-white">B1</td>
-                            <td class="py-4 px-2">2100 MHz</td>
-                            <td class="py-4 px-2"><span class="bg-blue-500/20 text-blue-400 px-2 py-1 rounded text-xs font-bold">BY-BÅND</span></td>
-                            <td class="py-4 px-2 text-sm">Veldig høy fart. Perfekt for tettbygde strøk.</td>
-                        </tr>
-                        <tr class="border-b border-white/5 hover:bg-white/5">
-                            <td class="py-4 px-2 font-bold text-white">B3</td>
-                            <td class="py-4 px-2">1800 MHz</td>
-                            <td class="py-4 px-2"><span class="bg-green-500/20 text-green-400 px-2 py-1 rounded text-xs font-bold">ARBEIDSHEST</span></td>
-                            <td class="py-4 px-2 text-sm">Gullstandarden i Norge. God balanse mellom fart og rekkevidde.</td>
-                        </tr>
-                        <tr class="border-b border-white/5 hover:bg-white/5">
-                            <td class="py-4 px-2 font-bold text-white">B7</td>
-                            <td class="py-4 px-2">2600 MHz</td>
-                            <td class="py-4 px-2"><span class="bg-red-500/20 text-red-400 px-2 py-1 rounded text-xs font-bold">TURBO</span></td>
-                            <td class="py-4 px-2 text-sm">Ekstrem fart, men dør nesten med en gang du går bak et tre.</td>
-                        </tr>
-                        <tr class="border-b border-white/5 hover:bg-white/5">
-                            <td class="py-4 px-2 font-bold text-white">B20</td>
-                            <td class="py-4 px-2">800 MHz</td>
-                            <td class="py-4 px-2"><span class="bg-orange-500/20 text-orange-400 px-2 py-1 rounded text-xs font-bold">LANGDISTANSE</span></td>
-                            <td class="py-4 px-2 text-sm">Kongen av dekning. Når milevis, men blir fort fullt av folk.</td>
-                        </tr>
-                        <tr class="border-b border-white/5 hover:bg-white/5">
-                            <td class="py-4 px-2 font-bold text-white">B28</td>
-                            <td class="py-4 px-2">700 MHz</td>
-                            <td class="py-4 px-2"><span class="bg-purple-500/20 text-purple-400 px-2 py-1 rounded text-xs font-bold">5G RYGGRAD</span></td>
-                            <td class="py-4 px-2 text-sm">Dekker enorme områder. Selve fundamentet for 5G på bygda.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8 pt-10 border-t border-white/10">
+    <main class="max-w-6xl mx-auto px-6 py-12">
+        
+        <section class="grid md:grid-cols-2 gap-8 mb-16">
+            <div class="glass p-8 rounded-3xl flex flex-col justify-between hover:border-gray-500 transition-all">
                 <div>
-                    <h4 class="text-xl font-bold mb-4 text-purple-400">Slik setter du det opp:</h4>
-                    <ol class="space-y-4 text-gray-300 text-sm list-decimal ml-4">
-                        <li>Koble modemet (f.eks Nighthawk M1) til din <strong>Raspberry Pi</strong>.</li>
-                        <li>Kjør et Python-script på Pi-en som henter ut signaldata lokalt.</li>
-                        <li>Bruk <strong>Tailscale</strong> for å lage en sikker tunnel mellom Pi-en og streaming-PC-en din.</li>
-                        <li>Legg til en "Browser Source" i OBS som peker til Pi-en sin Tailscale-IP.</li>
-                    </ol>
-                </div>
-                <div class="bg-black/40 p-6 rounded-2xl border border-white/5">
-                    <h4 class="text-sm font-bold mb-3 text-gray-500 uppercase tracking-widest">OBS Browser Source URL:</h4>
-                    <code class="text-purple-400 text-xs block bg-black p-3 rounded-lg border border-purple-500/20">
-                        http://[DIN_PI_TAILSCALE_IP]:8080
-                    </code>
-                    <p class="text-[10px] text-gray-500 mt-4 leading-relaxed">
-                        * Bytt ut <strong>[DIN_PI_TAILSCALE_IP]</strong> med IP-adressen du finner i Tailscale-appen på din Raspberry Pi. Port 8080 er standard for vårt signal-script.
-                    </p>
+                    <h2 class="text-2xl font-bold mb-2">1 Dag "Kjapt og gale"</h2>
+                    <p class="text-gray-400 mb-6 text-sm text-purple-300 uppercase font-bold">Standard Hosting</p>
+                    <p class="text-5xl font-black mb-6">100 kr</p>
+                    <ul class="space-y-3 mb-8 text-gray-300">
+                        <li>✅ 24 timers SRT Hosting</li>
+                        <li>✅ Personlig Stats-link</li>
+                        <li>⭐ <strong>Hjelp inkludert:</strong> Jeg bistår med det grunnleggende om du er helt uvitende om hvordan alt fungerer.</li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-    <main class="max-w-6xl mx-auto px-6 py-12">
-        
-        <section class="grid md:grid-cols-2 gap-8 mb-16">
-            <div class="glass p-8 rounded-3xl flex flex-col justify-between hover:border-gray-500 transition-all">
-                <div>
-                    <h2 class="text-2xl font-bold mb-2">1 Dag "Kjapt og gale"</h2>
-                    <p class="text-gray-400 mb-6 text-sm text-purple-300 uppercase font-bold">Standard Hosting</p>
-                    <p class="text-5xl font-black mb-6">100 kr</p>
-                    <ul class="space-y-3 mb-8 text-gray-300">
-                        <li>✅ 24 timers SRT Hosting</li>
-                        <li>✅ Personlig Stats-link</li>
-                        <li>⭐ <strong>Hjelp inkludert:</strong> Jeg bistår med det grunnleggende om du er helt uvitende om hvordan alt fungerer.</li>
-                    </ul>
-                </div>
-            </div>
 
-            <div class="glass p-8 rounded-3xl neon-border flex flex-col justify-between relative bg-purple-900/10 transition-all shadow-[0_0_25px_rgba(168,85,247,0.15)]">
-                <div>
-                    <h2 class="text-2xl font-bold mb-2 text-white">1 Dag m/ Setup hjelp</h2>
-                    <p class="text-gray-400 mb-6 text-sm text-purple-300 uppercase font-bold">Full nødløsning</p>
-                    <p class="text-5xl font-black mb-6">149 kr</p>
-                    <ul class="space-y-4 mb-8 text-gray-300">
-                        <li>✅ Alt i standard-pakken</li>
-                        <li class="border-l-2 border-purple-500 pl-3">
-                            ⭐ <strong>Full Opplæring & Setup:</strong><br>
-                            <span class="text-sm">Jeg setter opp alt og lærer deg hvordan du bruker det. Du kan bruke denne configen hos andre senere ved å bare endre f.eks stats-link.</span>
-                        </li>
-                        <li>✅ Oppsett av Sceneshifter (BRB/Low Bitrate)</li>
-                        <li>✅ Div. hjelp om du er helt uvitende</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+            <div class="glass p-8 rounded-3xl neon-border flex flex-col justify-between relative bg-purple-900/10 transition-all shadow-[0_0_25px_rgba(168,85,247,0.15)]">
+                <div>
+                    <h2 class="text-2xl font-bold mb-2 text-white">1 Dag m/ Setup hjelp</h2>
+                    <p class="text-gray-400 mb-6 text-sm text-purple-300 uppercase font-bold">Full nødløsning</p>
+                    <p class="text-5xl font-black mb-6">149 kr</p>
+                    <ul class="space-y-4 mb-8 text-gray-300">
+                        <li>✅ Alt i standard-pakken</li>
+                        <li class="border-l-2 border-purple-500 pl-3">
+                            ⭐ <strong>Full Opplæring & Setup:</strong><br>
+                            <span class="text-sm">Jeg setter opp alt og lærer deg hvordan du bruker det. Du kan bruke denne configen hos andre senere ved å bare endre f.eks stats-link.</span>
+                        </li>
+                        <li>✅ Oppsett av Sceneshifter (BRB/Low Bitrate)</li>
+                        <li>✅ Div. hjelp om du er helt uvitende</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-        <section class="max-w-xl mx-auto glass p-10 rounded-3xl shadow-2xl mb-24" id="kontakt">
-            <div class="text-center mb-8">
-                <h3 class="text-3xl font-bold mb-2 font-purple-400 text-white">Bestill 1-Dags Leie</h3>
-                <p class="text-gray-400 italic">"Kjapt og gale – rett på stream"</p>
-            </div>
-            
-            <form action="https://formspree.io/f/xbdlnobn" method="POST" class="space-y-5">
-                <input type="text" name="user" placeholder="Twitch Navn / Discord" required class="w-full bg-slate-900 border border-gray-800 rounded-xl p-4 text-white focus:ring-2 focus:ring-purple-500 outline-none">
-                <input type="email" name="email" placeholder="Din E-post" required class="w-full bg-slate-900 border border-gray-800 rounded-xl p-4 text-white focus:ring-2 focus:ring-purple-500 outline-none">
-                <select name="service" class="w-full bg-slate-900 border border-gray-800 rounded-xl p-4 text-white focus:ring-2 focus:ring-purple-500 outline-none">
-                    <option value="100kr">1 dag hosting (100 kr)</option>
-                    <option value="149kr">1 dag hosting + setup hjelp (149 kr)</option>
-                </select>
-                <button type="submit" class="w-full bg-purple-600 hover:bg-purple-500 text-white font-black py-4 rounded-xl shadow-lg transition-all active:scale-95">SEND FORESPØRSEL</button>
-            </form>
-        </section>
+        <section class="max-w-xl mx-auto glass p-10 rounded-3xl shadow-2xl mb-24" id="kontakt">
+            <div class="text-center mb-8">
+                <h3 class="text-3xl font-bold mb-2 font-purple-400 text-white">Bestill 1-Dags Leie</h3>
+                <p class="text-gray-400 italic">"Kjapt og gale – rett på stream"</p>
+            </div>
+            
+            <form action="https://formspree.io/f/xbdlnobn" method="POST" class="space-y-5">
+                <input type="text" name="user" placeholder="Twitch Navn / Discord" required class="w-full bg-slate-900 border border-gray-800 rounded-xl p-4 text-white focus:ring-2 focus:ring-purple-500 outline-none">
+                <input type="email" name="email" placeholder="Din E-post" required class="w-full bg-slate-900 border border-gray-800 rounded-xl p-4 text-white focus:ring-2 focus:ring-purple-500 outline-none">
+                <select name="service" class="w-full bg-slate-900 border border-gray-800 rounded-xl p-4 text-white focus:ring-2 focus:ring-purple-500 outline-none">
+                    <option value="100kr">1 dag hosting (100 kr)</option>
+                    <option value="149kr">1 dag hosting + setup hjelp (149 kr)</option>
+                </select>
+                <button type="submit" class="w-full bg-purple-600 hover:bg-purple-500 text-white font-black py-4 rounded-xl shadow-lg transition-all active:scale-95">SEND FORESPØRSEL</button>
+            </form>
+        </section>
 
-        <section class="max-w-4xl mx-auto mb-24">
-            <div class="bg-blue-900/10 border border-blue-500/30 p-10 rounded-3xl text-center md:text-left flex flex-col md:flex-row items-center gap-8 shadow-xl">
-                <div class="flex-1">
-                    <h3 class="text-2xl font-bold mb-3 text-blue-400">Ønsker du en mer økonomisk løsning?</h3>
-                    <p class="text-gray-300 leading-relaxed">
-                        Hvis du planlegger å streame mye fremover, er <strong>NOOK</strong> sitt tilbud et bedre valg rent økonomisk. Langsiktig leie vil lønne seg over tid sammenlignet med dagspakker.
-                    </p>
-                    <div class="mt-4 p-4 bg-blue-500/10 rounded-xl border border-blue-500/20">
-                        <p class="text-blue-200 text-sm">
-                            🚀 <strong>Nyhet:</strong> NOOK vil snart tilby en eksklusiv pakke som inkluderer både SRT og en <strong>egenprogrammert Discord-bot</strong> med flere unike funksjoner!
-                        </p>
-                    </div>
-                    <p class="mt-4 text-sm text-blue-300/70 uppercase font-bold tracking-widest">
-                        Ta kontakt med han for mer info om pris og faste avtaler.
-                    </p>
-                </div>
-                <a href="https://noonenook.no/" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white font-black py-4 px-10 rounded-2xl transition-all hover:scale-105 shadow-lg whitespace-nowrap">
-                    Besøk NOOK
-                </a>
-            </div>
-        </section>
+        <section class="max-w-4xl mx-auto mb-24">
+            <div class="bg-blue-900/10 border border-blue-500/30 p-10 rounded-3xl text-center md:text-left flex flex-col md:flex-row items-center gap-8 shadow-xl">
+                <div class="flex-1">
+                    <h3 class="text-2xl font-bold mb-3 text-blue-400">Ønsker du en mer økonomisk løsning?</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Hvis du planlegger å streame mye fremover, er <strong>NOOK</strong> sitt tilbud et bedre valg rent økonomisk. Langsiktig leie vil lønne seg over tid sammenlignet med dagspakker.
+                    </p>
+                    <div class="mt-4 p-4 bg-blue-500/10 rounded-xl border border-blue-500/20">
+                        <p class="text-blue-200 text-sm">
+                            🚀 <strong>Nyhet:</strong> NOOK vil snart tilby en eksklusiv pakke som inkluderer både SRT og en <strong>egenprogrammert Discord-bot</strong> med flere unike funksjoner!
+                        </p>
+                    </div>
+                </div>
+                <a href="https://noonenook.no/" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white font-black py-4 px-10 rounded-2xl transition-all hover:scale-105 shadow-lg whitespace-nowrap">
+                    Besøk NOOK
+                </a>
+            </div>
+        </section>
 
-        <section class="mb-20">
-            <div class="glass p-6 md:p-10 rounded-3xl max-w-4xl mx-auto border border-white/10 text-center">
-                <h3 class="text-3xl font-bold mb-8 uppercase tracking-widest">Se det i aksjon</h3>
-                
-                <div class="relative rounded-2xl overflow-hidden bg-black shadow-2xl mb-12" style="padding-top: 56.25%;">
-                    <iframe 
-                        class="absolute top-0 left-0 w-full h-full"
-                        src="https://www.youtube.com/embed/9K_azACOl_4" 
-                        frameborder="0" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
+        <section class="mb-20">
+            <div class="glass p-6 md:p-10 rounded-3xl max-w-4xl mx-auto border border-white/10 text-center">
+                <h3 class="text-3xl font-bold mb-8 uppercase tracking-widest">Se det i aksjon</h3>
+                
+                <div class="relative rounded-2xl overflow-hidden bg-black shadow-2xl mb-12" style="padding-top: 56.25%;">
+                    <iframe 
+                        class="absolute top-0 left-0 w-full h-full"
+                        src="https://www.youtube.com/embed/9K_azACOl_4" 
+                        frameborder="0" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
 
-                <h4 class="text-xl font-bold mb-6 text-purple-400 uppercase tracking-wide">Live Bitrate Stats i chat</h4>
-                <div class="rounded-2xl border border-white/10 overflow-hidden shadow-2xl inline-block bg-slate-900">
-                    <img src="bitrate.png" alt="Bitrate Stats" class="max-w-full h-auto">
-                </div>
-                <p class="mt-8 text-gray-300 italic leading-relaxed max-w-2xl mx-auto border-t border-white/5 pt-8">
-                    Her streames det til serveren! Det sendes fra en GoPro 8 til en Raspberry Pi, med en Nighthawk M1 router som internettkobling.
-                </p>
-            </div>
-        </section>
-    </main>
+                <div class="mb-12">
+                    <a href="signal-info.html" class="inline-block bg-purple-600 hover:bg-purple-500 text-white font-black py-4 px-10 rounded-2xl transition-all hover:scale-105 shadow-[0_0_20px_rgba(168,85,247,0.4)] uppercase tracking-widest text-sm">
+                        Lyst å legge til signal i overlay?
+                    </a>
+                </div>
 
-    <footer class="py-12 text-center text-gray-600 text-xs tracking-widest uppercase border-t border-white/5">
-        <p>M00RTENS SRT HOSTING & NOOK er to separate tjenester.</p>
-        <p class="mt-2">&copy; 2026 M00RTENS SRT HOSTING</p>
-    </footer>
+                <h4 class="text-xl font-bold mb-6 text-purple-400 uppercase tracking-wide">Live Bitrate Stats i chat</h4>
+                <div class="rounded-2xl border border-white/10 overflow-hidden shadow-2xl inline-block bg-slate-900">
+                    <img src="bitrate.png" alt="Bitrate Stats" class="max-w-full h-auto">
+                </div>
+                <p class="mt-8 text-gray-300 italic leading-relaxed max-w-2xl mx-auto border-t border-white/5 pt-8">
+                    Her streames det til serveren! Det sendes fra en GoPro 8 til en Raspberry Pi, med en Nighthawk M1 router som internettkobling.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-12 text-center text-gray-600 text-xs tracking-widest uppercase border-t border-white/5">
+        <p>M00RTENS SRT HOSTING & NOOK er to separate tjenester.</p>
+        <p class="mt-2">&copy; 2026 M00RTENS SRT HOSTING</p>
+    </footer>
 
 </body>
 </html>
