@@ -28,7 +28,87 @@
             Trenger du stabil stream <strong>i dag</strong>? Jeg fikser SRT og NOALBS på 1-2-3 så du kan gå live "kjapt og gale".
         </p>
     </header>
+<section class="max-w-4xl mx-auto mb-24">
+    <div class="glass p-10 rounded-3xl border border-purple-500/30">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-10">
+            <div>
+                <h3 class="text-3xl font-bold text-white uppercase tracking-tight">Signal & Frekvenser</h3>
+                <p class="text-gray-400 mt-2">Vil du ha live signal-overlay i OBS slik som proffene?</p>
+            </div>
+            <button onclick="document.getElementById('signal-content').classList.toggle('hidden')" class="bg-purple-600 hover:bg-purple-500 text-white font-black py-3 px-8 rounded-xl transition-all active:scale-95 shadow-lg">
+                LYST Å LEGGE TIL SIGNAL I OVERLAY?
+            </button>
+        </div>
 
+        <div id="signal-content" class="hidden space-y-12 transition-all">
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="text-purple-400 uppercase text-sm tracking-widest border-b border-white/10">
+                            <th class="py-4 px-2">Bånd</th>
+                            <th class="py-4 px-2">Frekvens</th>
+                            <th class="py-4 px-2">Type</th>
+                            <th class="py-4 px-2">Egenskaper</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-300">
+                        <tr class="border-b border-white/5 hover:bg-white/5">
+                            <td class="py-4 px-2 font-bold text-white">B1</td>
+                            <td class="py-4 px-2">2100 MHz</td>
+                            <td class="py-4 px-2"><span class="bg-blue-500/20 text-blue-400 px-2 py-1 rounded text-xs font-bold">BY-BÅND</span></td>
+                            <td class="py-4 px-2 text-sm">Veldig høy fart. Perfekt for tettbygde strøk.</td>
+                        </tr>
+                        <tr class="border-b border-white/5 hover:bg-white/5">
+                            <td class="py-4 px-2 font-bold text-white">B3</td>
+                            <td class="py-4 px-2">1800 MHz</td>
+                            <td class="py-4 px-2"><span class="bg-green-500/20 text-green-400 px-2 py-1 rounded text-xs font-bold">ARBEIDSHEST</span></td>
+                            <td class="py-4 px-2 text-sm">Gullstandarden i Norge. God balanse mellom fart og rekkevidde.</td>
+                        </tr>
+                        <tr class="border-b border-white/5 hover:bg-white/5">
+                            <td class="py-4 px-2 font-bold text-white">B7</td>
+                            <td class="py-4 px-2">2600 MHz</td>
+                            <td class="py-4 px-2"><span class="bg-red-500/20 text-red-400 px-2 py-1 rounded text-xs font-bold">TURBO</span></td>
+                            <td class="py-4 px-2 text-sm">Ekstrem fart, men dør nesten med en gang du går bak et tre.</td>
+                        </tr>
+                        <tr class="border-b border-white/5 hover:bg-white/5">
+                            <td class="py-4 px-2 font-bold text-white">B20</td>
+                            <td class="py-4 px-2">800 MHz</td>
+                            <td class="py-4 px-2"><span class="bg-orange-500/20 text-orange-400 px-2 py-1 rounded text-xs font-bold">LANGDISTANSE</span></td>
+                            <td class="py-4 px-2 text-sm">Kongen av dekning. Når milevis, men blir fort fullt av folk.</td>
+                        </tr>
+                        <tr class="border-b border-white/5 hover:bg-white/5">
+                            <td class="py-4 px-2 font-bold text-white">B28</td>
+                            <td class="py-4 px-2">700 MHz</td>
+                            <td class="py-4 px-2"><span class="bg-purple-500/20 text-purple-400 px-2 py-1 rounded text-xs font-bold">5G RYGGRAD</span></td>
+                            <td class="py-4 px-2 text-sm">Dekker enorme områder. Selve fundamentet for 5G på bygda.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 pt-10 border-t border-white/10">
+                <div>
+                    <h4 class="text-xl font-bold mb-4 text-purple-400">Slik setter du det opp:</h4>
+                    <ol class="space-y-4 text-gray-300 text-sm list-decimal ml-4">
+                        <li>Koble modemet (f.eks Nighthawk M1) til din <strong>Raspberry Pi</strong>.</li>
+                        <li>Kjør et Python-script på Pi-en som henter ut signaldata lokalt.</li>
+                        <li>Bruk <strong>Tailscale</strong> for å lage en sikker tunnel mellom Pi-en og streaming-PC-en din.</li>
+                        <li>Legg til en "Browser Source" i OBS som peker til Pi-en sin Tailscale-IP.</li>
+                    </ol>
+                </div>
+                <div class="bg-black/40 p-6 rounded-2xl border border-white/5">
+                    <h4 class="text-sm font-bold mb-3 text-gray-500 uppercase tracking-widest">OBS Browser Source URL:</h4>
+                    <code class="text-purple-400 text-xs block bg-black p-3 rounded-lg border border-purple-500/20">
+                        http://[DIN_PI_TAILSCALE_IP]:8080
+                    </code>
+                    <p class="text-[10px] text-gray-500 mt-4 leading-relaxed">
+                        * Bytt ut <strong>[DIN_PI_TAILSCALE_IP]</strong> med IP-adressen du finner i Tailscale-appen på din Raspberry Pi. Port 8080 er standard for vårt signal-script.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
     <main class="max-w-6xl mx-auto px-6 py-12">
         
         <section class="grid md:grid-cols-2 gap-8 mb-16">
