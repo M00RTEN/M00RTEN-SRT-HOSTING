@@ -81,17 +81,22 @@
 
         <section class="max-w-xl mx-auto glass p-10 rounded-3xl shadow-2xl mb-24" id="kontakt">
             <div class="text-center mb-8">
-                <h3 class="text-3xl font-bold mb-2 text-white">Bestill 5-Dags Leie</h3>
+                <h3 class="text-3xl font-bold mb-2 text-white">Kontakt for avtale</h3>
                 <p class="text-gray-400 italic">"Kjapt og gale – rett på stream"</p>
             </div>
             
             <form action="https://formspree.io/f/xbdlnobn" method="POST" class="space-y-5">
                 <input type="text" name="user" placeholder="Twitch Navn / Discord" required class="w-full bg-slate-900 border border-gray-800 rounded-xl p-4 text-white focus:ring-2 focus:ring-purple-500 outline-none">
                 <input type="email" name="email" placeholder="Din E-post" required class="w-full bg-slate-900 border border-gray-800 rounded-xl p-4 text-white focus:ring-2 focus:ring-purple-500 outline-none">
+                
                 <select name="service" class="w-full bg-slate-900 border border-gray-800 rounded-xl p-4 text-white focus:ring-2 focus:ring-purple-500 outline-none">
+                    <option value="custom">Custom avtale</option>
                     <option value="100kr">5 dags hosting (100 kr)</option>
                     <option value="200kr">5 dags hosting + setup hjelp (200 kr)</option>
                 </select>
+
+                <textarea name="message" placeholder="Beskriv ditt behov (f.eks. antall dager, tidspunkt)..." rows="3" class="w-full bg-slate-900 border border-gray-800 rounded-xl p-4 text-white focus:ring-2 focus:ring-purple-500 outline-none"></textarea>
+
                 <button type="submit" class="w-full bg-purple-600 hover:bg-purple-500 text-white font-black py-4 rounded-xl shadow-lg transition-all active:scale-95">SEND FORESPØRSEL</button>
             </form>
         </section>
